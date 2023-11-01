@@ -57,3 +57,10 @@ Route::get('/categories/{category:slug}', function (\App\Models\Category $catego
         'category' => $category->name
     ]);
 });
+
+Route::get('/authors/{author:username}', function (\App\Models\User $author){
+    return view('posts', [
+        'title' => 'USER POSTS',
+        'posts' => $author->posts
+        ]);
+});

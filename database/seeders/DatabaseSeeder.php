@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory(5)->create();
+/*
+         \App\Models\User::factory()->create([
+             'name' => 'Test User',
+             'email' => 'test@example.com',
+         ]);
 
         \App\Models\User::create([
            'name'=>'M Lanang Abid K',
@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             'email'=>'fergusooooooooooon@gmail.com',
             'password'=>bcrypt('12345')
         ]);
+        */
 
         \App\Models\Category::create([
             'name'=>'Pemogramman',
@@ -44,6 +45,9 @@ class DatabaseSeeder extends Seeder
             'slug'=>'web-design',
         ]);
 
+        Post::factory(20)->create();
+
+        /*
         \App\Models\Post::create([
             'title'=>'Judul Pertama',
             'category_id'=>1,
@@ -69,6 +73,6 @@ class DatabaseSeeder extends Seeder
             'slug'=>'judul-ketiga',
             'excerpt'=>'Postingan pertama Slurrr neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse',
             'body'=>'<p>neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut</p><p> placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt arcu non sodales neque</p> <p>sodales ut etiam sit amet nisl purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris augue neque gravida in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat</p>'
-        ]);
+        ]); */
     }
 }

@@ -32,35 +32,27 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/blog', function () {
-
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => Post::all()
-    ]);
-});
-
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', function () {
     return view('categories', [
         'title' => 'POST CATEGORIES',
-        'categories' => Category::all()
+        'categpries' => Category::all()
         ]);
 });
 
 Route::get('/categories/{category:slug}', function (\App\Models\Category $category){
-    return view('category', [
-        'title' => $category->name,
+    return view('posts', [
+        'title' => "Post By Category: $category->name",
         'posts' => $category->posts,
-        'category' => $category->name
+        'category' => $category->posts->load('category', 'author')
     ]);
 });
 
 Route::get('/authors/{author:username}', function (\App\Models\User $author){
     return view('posts', [
-        'title' => 'USER POSTS',
-        'posts' => $author->posts
+        'title' => "Post By Author: $author->name",
+        'posts' => $author->posts->load('category', 'author')
         ]);
 });

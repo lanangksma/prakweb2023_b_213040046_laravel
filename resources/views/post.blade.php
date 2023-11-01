@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">{{ $post->title }}</h1>
+    <h1 class="mb-5">{{ $title }}</h1>
 
     <p>By.
         <a href="/authors/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a>in

@@ -45,6 +45,11 @@ class DatabaseSeeder extends Seeder
             'slug'=>'web-design',
         ]);
 
+        \App\Models\Category::create([
+            'name'=>'Linux',
+            'slug'=>'linux',
+        ]);
+
         Post::factory(20)->create();
 
         /*

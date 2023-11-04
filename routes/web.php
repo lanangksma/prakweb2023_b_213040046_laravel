@@ -19,13 +19,15 @@ use App\Models\Category;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "HOME"
+        "title" => "HOME",
+        "active" => "home"
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
         "title" => "ABOUT",
+        "active" => 'about',
         "name" => "Muhamad Lanang Abid Kusuma",
         "email" => "lanang.213040046@mail.unpas.ac.id",
         "image" => "waduh.jpg"
@@ -40,21 +42,5 @@ Route::get('/categories', function () {
         'title' => 'POST CATEGORIES',
         'active' => 'categories',
         'categories' => Category::all()
-        ]);
-});
-
-Route::get('/categories/{category:slug}', function (\App\Models\Category $category){
-    return view('posts', [
-        'title' => "Post By Category: $category->name",
-        'posts' => $category->posts,
-        'active' => 'categories',
-        'category' => $category->posts->load('category', 'author')
-    ]);
-});
-
-Route::get('/authors/{author:username}', function (\App\Models\User $author){
-    return view('posts', [
-        'title' => "Post By Author: $author->name",
-        'posts' => $author->posts->load('category', 'author')
         ]);
 });

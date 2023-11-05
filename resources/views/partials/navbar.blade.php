@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient">
     <div class="container">
         <a class="navbar-brand" href="/">SKUYYY Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -19,6 +19,14 @@
                 <li class="nav-item">
                     <a class="nav-link {{ ($active === "categories") ? 'active' : '' }}" href="/categories">
                         Categories
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {{ ($active === "login") ? 'active' : '' }}" href="/login">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Login
                     </a>
                 </li>
             </ul>

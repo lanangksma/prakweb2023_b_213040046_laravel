@@ -23,17 +23,18 @@ class DatabaseSeeder extends Seeder
          ]);
 
         \App\Models\User::create([
-           'name'=>'M Lanang Abid K',
-            'email'=>'lanst@gmail.com',
-            'password'=>bcrypt('12345')
-        ]);
-
-        \App\Models\User::create([
             'name'=>'Fergusooooooooooon',
             'email'=>'fergusooooooooooon@gmail.com',
             'password'=>bcrypt('12345')
         ]);
         */
+
+        \App\Models\User::create([
+            'name'=>'M Lanang Abid K',
+            'username'=>'lanangabid',
+             'email'=>'lanst@gmail.com',
+             'password'=>bcrypt('12345')
+         ]);
 
         \App\Models\Category::create([
             'name'=>'Pemogramman',

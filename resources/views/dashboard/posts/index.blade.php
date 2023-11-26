@@ -38,15 +38,15 @@
                             <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info">
                                 <i data-feather="eye"></i>
                             </a>
-                            <a href="" class="badge bg-warning">
+                            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning">
                                 <i data-feather="edit"></i>
                             </a>
-                            <form action="/dashboard/posts/{{ $post->slug }}" method="posts" class="d-inline">
+                            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
-                                <a href="" class="badge bg-danger">
+                                <button class="badge bg-danger border-0" onclick="return confirm('Are u Sure?')">
                                     <i data-feather="x-circle"></i>
-                                </a>
+                                </button>
                             </form>
                         </td>
                     </tr>

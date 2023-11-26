@@ -12,6 +12,12 @@
             <i data-feather="plus"></i>
             Create new post
         </a>
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <table class="table table-striped table-sm">
             <caption>
             <thead>
@@ -35,9 +41,13 @@
                             <a href="" class="badge bg-warning">
                                 <i data-feather="edit"></i>
                             </a>
-                            <a href="" class="badge bg-danger">
-                                <i data-feather="x-circle"></i>
-                            </a>
+                            <form action="/dashboard/posts/{{ $post->slug }}" method="posts" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <a href="" class="badge bg-danger">
+                                    <i data-feather="x-circle"></i>
+                                </a>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
